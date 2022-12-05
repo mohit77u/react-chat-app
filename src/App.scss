@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.modal {
+  margin-top: -0;
+  margin-left: -0;
+  transition: visibility 0s linear .2s,opacity .2s 0s;
+  height: 100vh;
+  opacity: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+}
+
+.notification-dropdown__content{
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    right: 0;
+    position: absolute;
+    left: auto;
+    // top: 50px;
+    margin-top: 50px;
+}
+
+.account-dropdown .dropdown-menu{
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  right: 0;
+  position: absolute;
+  left: auto;
+  // top: 50px;
+}
+
+.dropdown-menu{
+  margin-top: 50px !important;
+}
+
+.side-content {
+  display: block;
+}
+
+.chat-input__dropdown{
+  margin-top: -190px !important;
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transform: none;
+  left: -20px;
+}
