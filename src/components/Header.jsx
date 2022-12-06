@@ -17,7 +17,7 @@ export default function Header()
                         <div className="text-base font-light ml-4"> <span className="font-medium">Messenger </span> </div>
                     </Link>
                     {/* <!-- END: Logo --> */ }
-                    <div className="mobile-menu-toggler flex md:hidden items-center h-full mr-auto px-5 -ml-5" href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-bar-chart-2 w-5 h-5 transform rotate-90"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> </div>
+                    <div className="mobile-menu-toggler flex md:hidden items-center h-full mr-auto px-5 -ml-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-bar-chart-2 w-5 h-5 transform rotate-90"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> </div>
                     <div className="hidden md:flex items-center px-5"> <button className="btn btn-primary" onClick={ () => { setModal(!modal); setNotification(false); setProfile(false) } }>Start Conversation</button> </div>
                     {/* <!-- BEGIN: Notifications --> */ }
                     <div className="notification-dropdown dropdown relative">
@@ -40,7 +40,7 @@ export default function Header()
                                         </div>
                                         <div className="ml-2 overflow-hidden">
                                             <div className="flex items-center">
-                                                <a href="#" className="font-medium truncate mr-5">Keanu Reeves</a>
+                                                <p className="font-medium truncate mr-5">Keanu Reeves</p>
                                                 <div className="text-opacity-50 text-gray-800 text-xs ml-auto whitespace-nowrap -mt-0.5">05:09 AM</div>
                                             </div>
                                             <div className="text-opacity-70 text-gray-800 dark:text-gray-500 w-full truncate mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
@@ -53,7 +53,7 @@ export default function Header()
                                         </div>
                                         <div className="ml-2 overflow-hidden">
                                             <div className="flex items-center">
-                                                <a href="#" className="font-medium truncate mr-5">Leonardo DiCaprio</a>
+                                                <p className="font-medium truncate mr-5">Leonardo DiCaprio</p>
                                                 <div className="text-opacity-50 text-gray-800 text-xs ml-auto whitespace-nowrap -mt-0.5">01:10 PM</div>
                                             </div>
                                             <div className="text-opacity-70 text-gray-800 dark:text-gray-500 w-full truncate mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -66,7 +66,7 @@ export default function Header()
                                         </div>
                                         <div className="ml-2 overflow-hidden">
                                             <div className="flex items-center">
-                                                <a href="#" className="font-medium truncate mr-5">Christian Bale</a>
+                                                <p className="font-medium truncate mr-5">Christian Bale</p>
                                                 <div className="text-opacity-50 text-gray-800 text-xs ml-auto whitespace-nowrap -mt-0.5">05:09 AM</div>
                                             </div>
                                             <div className="text-opacity-70 text-gray-800 dark:text-gray-500 w-full truncate mt-0.5">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem </div>
@@ -79,7 +79,7 @@ export default function Header()
                                         </div>
                                         <div className="ml-2 overflow-hidden">
                                             <div className="flex items-center">
-                                                <a href="#" className="font-medium truncate mr-5">Kevin Spacey</a>
+                                                <p className="font-medium truncate mr-5">Kevin Spacey</p>
                                                 <div className="text-opacity-50 text-gray-800 text-xs ml-auto whitespace-nowrap -mt-0.5">06:05 AM</div>
                                             </div>
                                             <div className="text-opacity-70 text-gray-800 dark:text-gray-500 w-full truncate mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>
@@ -92,7 +92,7 @@ export default function Header()
                                         </div>
                                         <div className="ml-2 overflow-hidden">
                                             <div className="flex items-center">
-                                                <a href="#" className="font-medium truncate mr-5">Tom Hanks</a>
+                                                <p className="font-medium truncate mr-5">Tom Hanks</p>
                                                 <div className="text-opacity-50 text-gray-800 text-xs ml-auto whitespace-nowrap -mt-0.5">05:09 AM</div>
                                             </div>
                                             <div className="text-opacity-70 text-gray-800 dark:text-gray-500 w-full truncate mt-0.5">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomi</div>

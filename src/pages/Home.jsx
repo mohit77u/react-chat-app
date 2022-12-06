@@ -39,7 +39,7 @@ function Home(){
                 }
             }
         })
-        
+
         setActiveUserChat(tempContacts[ 0 ])
     }
 
@@ -63,24 +63,7 @@ function Home(){
         setcontacts(tempContacts);
     }
 
-    // search contacts by name
-    const searchChat = (e) => {
-        e.preventDefault();
-
-        const tempchats = [];
-
-        for (let i = 0; i < chats.length; i++) {
-            if (
-                chats[i].name
-                    .toLowerCase()
-                    .includes(e.target.value.toLowerCase())
-            ) {
-                tempchats.push(chats[i]);
-            }
-        }
-
-        setchats(tempchats);
-    }
+    
 
     useEffect(() =>
     {
@@ -116,9 +99,9 @@ function Home(){
                         <div className="side-content col-span-12 xl:col-span-3 -mt-16 xl:mt-0 pt-20 xl:-mr-6 px-6 xl:pt-6 flex-col overflow-hidden" data-content="profile">
                             <div className="intro-y text-xl font-medium">Profile</div>
                             <div className="intro-y box relative px-4 py-6 mt-5">
-                                <a href="#" className="text-gray-600 tooltip w-8 h-8 flex items-center justify-center absolute top-0 right-0 mr-1 mt-1">
+                                <p className="cursor-pointer text-gray-600 tooltip w-8 h-8 flex items-center justify-center absolute top-0 right-0 mr-1 mt-1">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-edit-2 w-4 h-4"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
-                                </a>
+                                </p>
                                 <div className="w-20 h-20 mx-auto image-fit">
                                     <img alt="Topson Messenger Tailwind HTML Admin Template" className="rounded-full" src={ "http://topson.left4code.com/dist/images/" + loggedInUser.image } />
                                     <div className="bg-green-500 border-white w-3 h-3 absolute right-0 top-0 mt-1 mr-1 rounded-full border-2"></div>
@@ -197,7 +180,7 @@ function Home(){
                     {/* <!-- END: Side Content Contacts --> */ }
 
                     {/* <!-- BEGIN: Side Content Chats --> */ }
-                    { tab == 'chats' && (
+                    { tab === 'chats' && (
                         <div className="side-content col-span-12 xl:col-span-3 -mt-16 xl:mt-0 pt-20 xl:-mr-6 px-6 xl:pt-6 side-content--active flex-col overflow-hidden" data-content="chats">
                             <div className="intro-y text-xl font-medium">Chats</div>
                             <div className="intro-y relative mt-5">
@@ -244,12 +227,12 @@ function Home(){
                                     <div className="bg-green-500 w-3 h-3 absolute right-0 top-0 rounded-full border-2 border-white"></div>
                                 </div>
                                 <div className="ml-2 overflow-hidden">
-                                    <a href="#" className="text-base font-medium">{ activeUserChat ? activeUserChat.name : 'Dummy User' }</a>
+                                    <p className="text-base font-medium">{ activeUserChat ? activeUserChat.name : 'Dummy User' }</p>
                                     <div className="text-gray-600">Online</div>
                                 </div>
                             </div>
-                            <a className="text-gray-600 hover:text-theme-1" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-camera w-4 h-4 sm:w-6 sm:h-6"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> </a>
-                            <a className="text-gray-600 hover:text-theme-1 ml-2 sm:ml-5" href=""> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mic w-4 h-4 sm:w-6 sm:h-6"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> </a>
+                            <p className="cursor-pointer text-gray-600 hover:text-theme-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-camera w-4 h-4 sm:w-6 sm:h-6"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> </p>
+                            <p className="cursor-pointer text-gray-600 hover:text-theme-1 ml-2 sm:ml-5"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mic w-4 h-4 sm:w-6 sm:h-6"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> </p>
                         </div>
                         {/* <!-- END: Chat Box Top Bar --> */ }
 
@@ -263,7 +246,7 @@ function Home(){
                                 <div className="w-full">
                                     <div>
                                         <div className="chat-text-box__content flex items-center float-left">
-                                            <div className="box leading-relaxed dark:text-gray-300 text-gray-700 px-4 py-3 mt-3"> Lorem ipsum sit <a className="text-theme-1" href="">@edwardnorton</a> amen dolor, lorem ipsum sit amen dolor </div>
+                                            <div className="box leading-relaxed dark:text-gray-300 text-gray-700 px-4 py-3 mt-3"> Lorem ipsum sit <p className="text-theme-1">@edwardnorton</p> amen dolor, lorem ipsum sit amen dolor </div>
 
                                         </div>
                                         <div className="clear-both"></div>
@@ -279,7 +262,7 @@ function Home(){
                                 <div className="w-full">
                                     <div>
                                         <div className="chat-text-box__content flex items-center float-right">
-                                            <div className="box leading-relaxed bg-theme-1 text-opacity-80 text-white px-4 py-3 mt-3"> Lorem ipsum sit <a className="text-white" href="">@morganfreeman</a> amen dolor, lorem ipsum sit amen dolor </div>
+                                            <div className="box leading-relaxed bg-theme-1 text-opacity-80 text-white px-4 py-3 mt-3"> Lorem ipsum sit <p className="text-white">@morganfreeman</p> amen dolor, lorem ipsum sit amen dolor </div>
                                         </div>
                                         <div className="clear-both"></div>
                                     </div>
@@ -356,15 +339,15 @@ function Home(){
                         <div className="intro-y chat-input box border-theme-3 dark:bg-dark-2 dark:border-dark-2 border flex items-center px-5 py-4">
                             {/* <!-- BEGIN: Chat Input Dropdown --> */ }
                             <div className="dropdown relative" data-placement="top">
-                                <a href="#" className="text-gray-600 hover:text-theme-1 dropdown-toggle" onClick={ () => { setAttachment(!attachment) } }>
+                                <p className="cursor-pointer text-gray-600 hover:text-theme-1 dropdown-toggle" onClick={ () => { setAttachment(!attachment) } }>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus w-5 h-5 sm:w-6 sm:h-6"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                                </a>
+                                </p>
                                 { attachment && (
                                     <div className="chat-input__dropdown dropdown-menu">
                                         <div className="dropdown-menu__content p-2">
-                                            <a href="" className="shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-camera w-5 h-5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> </a>
-                                            <a href="" className="shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mic w-5 h-5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> </a>
-                                            <a href="" className="shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> </a>
+                                            <p className="cursor-pointer shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-camera w-5 h-5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> </p>
+                                            <p className="cursor-pointer shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mic w-5 h-5"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg> </p>
+                                            <p className="cursor-pointer shadow-md text-gray-600 bg-white  dark:text-gray-300 dark:bg-dark-3 hover:bg-theme-1 hover:text-white dark:hover:bg-theme-1 flex items-center p-3 transition duration-300 rounded-md mb-2"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-mail w-5 h-5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg> </p>
                                         </div>
                                     </div>
                                 ) }
@@ -373,10 +356,10 @@ function Home(){
                             <textarea className="form-control h-12 shadow-none resize-none border-transparent px-5 py-3 focus:shadow-none truncate mr-3 sm:mr-0" rows="1" placeholder="Type your message..."></textarea>
                             {/* <!-- BEGIN: Chat Smiley Dropdown --> */ }
                             <div className="dropdown relative mr-3 sm:mr-5" data-placement="top-end">
-                                <a href="#" className="text-gray-600 hover:text-theme-1 dropdown-toggle w-4 h-4 sm:w-5 sm:h-5 block"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-smile w-full h-full"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg> </a>
+                                <p className="cursor-pointer text-gray-600 hover:text-theme-1 dropdown-toggle w-4 h-4 sm:w-5 sm:h-5 block"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-smile w-full h-full"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg> </p>
                             </div>
                             {/* <!-- END: Chat Smiley Dropdown --> */ }
-                            <a href="#" className="bg-theme-1 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex-none flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-send w-4 h-4 sm:w-5 sm:h-5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> </a>
+                            <p className="cursor-pointer bg-theme-1 text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex-none flex items-center justify-center"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-send w-4 h-4 sm:w-5 sm:h-5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> </p>
                         </div>
                         {/* <!-- END: Chat Box Input --> */ }
 
@@ -388,7 +371,7 @@ function Home(){
                         <div className="overflow-y-auto scrollbar-hidden py-6">
                             {/* <!-- BEGIN: Profile --> */ }
                             <div className="intro-y box relative px-4 py-6">
-                                <a href="#" className="text-gray-600 tooltip w-8 h-8 flex items-center justify-center absolute top-0 right-0 mr-1 mt-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-edit-2 w-4 h-4"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> </a>
+                                <p className="cursor-pointer text-gray-600 tooltip w-8 h-8 flex items-center justify-center absolute top-0 right-0 mr-1 mt-1"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="feather feather-edit-2 w-4 h-4"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> </p>
                                 <div className="w-20 h-20 mx-auto image-fit">
                                     <img alt="Topson Messenger Tailwind HTML Admin Template" className="rounded-full" src={ "http://topson.left4code.com/dist/images/" + activeContact.image } />
                                     <div className="bg-green-500 border-white w-3 h-3 absolute right-0 top-0 mt-1 mr-1 rounded-full border-2"></div>
